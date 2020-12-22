@@ -44,7 +44,7 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        data = data.loc[df['Date'] >= '1999-1-01']
+        data = data.loc[data['Date'] >= '1999-1-01']
         data.plot(x='Date', y= 'adjclose')
         plt.xlabel("Date")
         plt.ylabel( 'Adjusted Closing prices')
