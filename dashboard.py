@@ -90,9 +90,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Weekly returns':
         st.line_chart(data_.weekly_returns)   
 
-if not st.sidebar.checkbox("Hide", True, key='2'):
-    if select_2 == 'Open':
-         st.write(sns.boxplot(data.open)
+
 #     if select_2 == 'High':
 #          st.write(seaborn.boxplot(data.high)
 #     if select_2 == 'Low':
