@@ -209,8 +209,8 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     
     
     if select_3 == 'High':
-         values = st.sidebar.slider("Start date",0.0,1.0, value=0)
-         st.write( px.box(data, y="high"))
+         d5 = st.date_input("date range without default", [datetime.date(2019, 7, 6), datetime.date(2019, 7, 8)])
+         st.write(d5)
     if select_3 == 'Volume':
          st.write( px.box(data, y="volume"))
     if select_3 == 'Close':
