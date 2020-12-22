@@ -55,8 +55,8 @@ st.sidebar.title("Select one of the feature to see the time series:")
 select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='1')
 st.sidebar.title("Select one of the feature to see the boxplot:")
 select_2 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='2')
-st.sidebar.title("Select a model to see how they predict the weekly retursn:")
-select_3 = st.sidebar.selectbox('Model', ['Linear regression', 'XGboost', 'ARIMA', 'LSTM'], key='3')
+st.sidebar.title("Select a feature to see an interactive histogram:")
+select_3 = st.sidebar.selectbox('Model', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns'], key='3')
 
 @st.cache
 def load_data(nrows):
