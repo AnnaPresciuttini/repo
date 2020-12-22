@@ -39,7 +39,9 @@ y = ['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']
 
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np 
-
+import pickle
+pickle_in = open('classifier.pkl', 'rb') 
+classifier = pickle.load(pickle_in) 
 # data processing
 import pandas as pd 
 # data visualization
@@ -49,13 +51,13 @@ from matplotlib import pyplot as plt
 # from matplotlib import style
 
 st.title('Predicting weekly returns of the FTSE MIB Index')
-st.markdown("Welcome to this app to perform exploratory data analysis of FSTE MIB index data!")
+st.markdown("Welcome!")
 
 st.sidebar.title("Select one of the feature to see the time series:")
 select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='1')
 st.sidebar.title("Select one of the feature to see the boxplot:")
 select_2 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='2')
-st.sidebar.title("Select the model:")
+st.sidebar.title("Select a model to see how they predict the weekly retursn:")
 select_3 = st.sidebar.selectbox('Model', ['Linear regression', 'XGboost', 'ARIMA', 'LSTM'], key='3')
 
 @st.cache
