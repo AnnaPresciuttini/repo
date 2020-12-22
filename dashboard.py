@@ -42,15 +42,16 @@ def load_data(nrows):
 
 data_load_state = st.text('Loading data...')
 data = load_data(5994)
-data_ = data.rename(columns={'Date':'index'}).set_index('index')
+# data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 # x = st.slider('Select the year range',1999, 2020, (1999, 2020))
 # st.line_chart(data_.adjclose)
-cols = ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns']
-st_ms = st.multiselect("Columns", data.cols.tolist())
+
 
 
 st.dataframe(data.head(500))
+cols = ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns']
+st_ms = st.multiselect("Columns", data[[adjclose, open, high, volume, weekly_returns]].tolist())
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
