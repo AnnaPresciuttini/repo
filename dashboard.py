@@ -83,7 +83,7 @@ if st.checkbox("Show correlations"):
 if st.checkbox("Show distribution of the features"):
             st.write("### Histograms")
             fig=data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
-            plt.show(fig)
+            plt.show()
             st.pyplot(fig)
             
 
