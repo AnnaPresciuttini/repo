@@ -91,8 +91,8 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         
     if select_2 == 'Adjusted Closing Prices':
         st.write(seaborn.boxplot(data.adjclose)
-    if select_2 == 'Open':
-         st.write(seaborn.boxplot(data.open)
+#     if select_2 == 'Open':
+#          st.write(seaborn.boxplot(data.open)
     if select_2 == 'High':
          st.write(seaborn.boxplot(data.high)
     if select_2 == 'Low':
