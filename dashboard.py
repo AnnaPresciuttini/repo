@@ -39,19 +39,15 @@ def load_data(nrows):
 
 data_load_state = st.text('Loading data...')
 data = load_data(5594)
+data_ = data.rename(columns={'Date':'index'}).set_index('index')
+
 
 
 st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        data = data.loc[data['Date'] >= '1999-1-01']
-        fig=data.plot(x='Date', y= 'adjclose')
-        plt.xlabel("Date")
-        plt.ylabel( 'Adjusted Closing prices')
-        plt.title( 'Italian adjusted closing prices history')
-        plt.legend().set_visible(False)
-        st.pyplot(fig)
+        st.line_chart(data_.adjclose)
         
 
  
