@@ -49,10 +49,20 @@ st.dataframe(data.head(500))
 if st.checkbox("Show dataset with selected columns"):
         # get the list of columns
         columns = data.columns.tolist()
-        st.write("#### Select the columns to display:")
+        st.write("#### Which columns do you want to see?")
         selected_cols = st.multiselect("", columns)
         selected_data = data[selected_cols]
         st.dataframe(selected_data)
+        
+if st.checkbox("Show number of rows"):
+        st.write({data.shape[0]}')
+if st.checkbox("Show number of columns"):
+        st.write({data.shape[1]}')
+
+    # Show dataset description
+    if st.checkbox("Show description of dataset"):
+        st.write(df.describe())
+
 
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
