@@ -218,13 +218,17 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         
     if select_3 == 'Volume':
         values_2 = st.sidebar.slider("Volume range", float(data.volume.min()), 3., (1., 2.))
-        f_2 = px.histogram(data.query(f"volume.between{values_2}"), x="volume", nbins=3, title="Volume distribution")
+        f_2 = px.histogram(data.query(f"volume.between{values_2}"), x="volume", nbins=18, title="Volume distribution")
         f_2.update_xaxes(title="Volume")
         f_2.update_yaxes(title="Values")
         st.plotly_chart(f_2)
         
     if select_3 == 'Close':
-         st.write( px.box(data, y="close"))
+        values_3 = st.sidebar.slider("Volume range", float(data.close.min()), 3., (1., 2.))
+        f_3 = px.histogram(data.query(f"volume.between{values_3}"), x="close", nbins=18, title="Close distribution")
+        f_3.update_xaxes(title="Close")
+        f_3.update_yaxes(title="Values")
+        st.plotly_chart(f_3)
     if select_3 == 'Open':
          st.write( px.box(data, y="open"))
     if select_3 == 'Weekly returns':
