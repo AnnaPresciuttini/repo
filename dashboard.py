@@ -30,12 +30,15 @@ import pandas as pd
 
 st.title('Predicting weekly returns of the FTSE MIB Index')
 
-st.sidebar.title("Exploratory data analysis:")
-select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns',], key='1')
+# st.sidebar.title("Exploratory data analysis:")
+# select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns',], key='1')
+
+
 @st.cache
 def load_data(nrows):
     data = pd.read_csv('dataset_streamlit.csv', nrows=nrows)
     return data
+
 
 data_load_state = st.text('Loading data...')
 data = load_data(5994)
@@ -43,6 +46,8 @@ data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 # x = st.slider('Select the year range',1999, 2020, (1999, 2020))
 # st.line_chart(data_.adjclose)
+cols = ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns']
+st_ms = st.multiselect("Columns", data.columns.tolist(), default=cols)
 
 
 st.dataframe(data.head(500))
