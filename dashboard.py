@@ -90,7 +90,7 @@ if st.checkbox("Show distribution of the features"):
 if st.checkbox("Are weekly returns normally distributed?"):
             st.write("### Let's see...")
             fig = plt.figure()
-            ax = fig.add_subplot(133)
+            ax = fig.add_subplot(222)
             ax.set_xlim([-0.3, 0.2])
             data['weekly_returns'].hist(ax= ax,bins=190, color='cadetblue')
             ax1 = ax.twinx()
