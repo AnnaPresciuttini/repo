@@ -43,10 +43,9 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        data = data.loc[data['Date'] >= '1999-1-01']
-        data.plot(x='Date', y= 'adjclose')
-        
-#         st.line_chart(data.adjclose)
+        data.rename(columns={'Date':'index'}).set_index('index')
+        st.line_chart(data.adjclose)
+
  
         
 
