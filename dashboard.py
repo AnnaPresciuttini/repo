@@ -170,7 +170,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         data_.plot(x='Date', y= 'volume')
         plt.xlabel("Date")
         plt.ylabel( 'Volumes')
-        plt.title( 'Italian volumes history')
+        plt.title( 'Historical Daily Transactions Volume')
         plt.legend().set_visible(False)
         plt.show()
         st.pyplot()
