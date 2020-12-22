@@ -17,6 +17,7 @@ import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 import plotly.express as px 
+import pickle
 from scipy.stats import norm  
 import plotly.figure_factory as ff
 z = [[1, 1, 1, 1, -0.35,1, 0.02],
