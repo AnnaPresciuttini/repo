@@ -187,9 +187,18 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
 
     if select_2 == 'High':
          st.write( px.box(data, y="high"))
-
-    
-    
+    if select_2 == 'Volume':
+         st.write( px.box(data, y="volume"))
+    if select_2 == 'Close':
+         st.write( px.box(data, y="close"))
+    if select_2 == 'Open':
+         st.write( px.box(data, y="open"))
+    if select_2 == 'Weekly returns':
+         st.write( px.box(data, y="weekly_returns"))
+    if select_2 == 'Adjusted Closing Prices':
+         st.write( px.box(data, y="adjclose"))
+    if select_2 == 'Low':
+         st.write( px.box(data, y="low"))
     
         
 
