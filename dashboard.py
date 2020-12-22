@@ -47,7 +47,7 @@ data_ = data.rename(columns={'Date':'index'}).set_index('index')
 # x = st.slider('Select the year range',1999, 2020, (1999, 2020))
 # st.line_chart(data_.adjclose)
 cols = ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns']
-st_ms = st.multiselect("Columns", data.columns.tolist(), default=cols)
+st_ms = st.multiselect("Columns", data.columns.tolist())
 
 
 st.dataframe(data.head(500))
