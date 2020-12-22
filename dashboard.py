@@ -142,7 +142,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.show()
         st.pyplot()
     if select == 'Low':
-       if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
         data_.plot(x='Date', y= 'low')
         plt.xlabel("Date")
@@ -152,7 +151,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.show()
         st.pyplot()
     if select == 'Close':
-        if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
         data_.plot(x='Date', y= 'close')
         plt.xlabel("Date")
@@ -162,7 +160,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.show()
         st.pyplot()
     if select == 'Volume':
-        if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
         data_.plot(x='Date', y= 'volume')
         plt.xlabel("Date")
@@ -172,7 +169,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.show()
         st.pyplot()
     if select == 'Weekly returns':
-        if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
         data_.plot(x='Date', y= 'high')
         plt.xlabel("Date")
