@@ -34,6 +34,9 @@ select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'Hi
 def load_data(nrows):
     data = pd.read_csv('dataset_streamlit.csv', nrows=nrows)
     return data
+
+st.dataframe(data.head())
+
 # df=pd.read_csv("dataset_streamlit.csv")
 # st.dataframe(df.head())
 
