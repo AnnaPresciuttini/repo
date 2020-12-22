@@ -107,7 +107,6 @@ if st.checkbox("Are weekly returns normally distributed?"):
             data['weekly_returns'].plot(kind="kde", color='steelblue', ax=ax1, legend=False )
             plt.show()
             st.pyplot()
-            st.write("### ... they are not normally distributed")
             
 if st.checkbox("Do you want to overlay a normal distribution on the histogram?"):
             data['weekly_returns'].hist(bins=280, color='cadetblue', density=True)
@@ -117,6 +116,7 @@ if st.checkbox("Do you want to overlay a normal distribution on the histogram?")
             plt.legend() 
             plt.show()
             st.pyplot()
+            st.write("### ... they are not normally distributed")
 
 
 # data_ = data.rename(columns={'Date':'index'}).set_index('index')
