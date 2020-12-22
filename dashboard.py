@@ -122,8 +122,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.title( 'Italian adjusted closing prices history')
         plt.legend().set_visible(False)
         plt.show()
-        st.pyplot()
-        
+        st.pyplot()       
     if select == 'Open':
         data_= data.loc[data['Date'] >= '1999-1-01']
         data_.plot(x='Date', y= 'open')
@@ -133,7 +132,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.legend().set_visible(False)
         plt.show()
         st.pyplot()
-        
     if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
         data_.plot(x='Date', y= 'high')
@@ -143,7 +141,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.legend().set_visible(False)
         plt.show()
         st.pyplot()
-        
     if select == 'Low':
        if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
@@ -154,7 +151,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.legend().set_visible(False)
         plt.show()
         st.pyplot()
-        
     if select == 'Close':
         if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
@@ -165,7 +161,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.legend().set_visible(False)
         plt.show()
         st.pyplot()
-        
     if select == 'Volume':
         if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
@@ -176,7 +171,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.legend().set_visible(False)
         plt.show()
         st.pyplot()
-        
     if select == 'Weekly returns':
         if select == 'High':
         data_= data.loc[data['Date'] >= '1999-1-01']
