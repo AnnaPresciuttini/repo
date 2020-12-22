@@ -9,7 +9,7 @@ Original file is located at
 
 # !pip install ipykernel
 # !pip install -q streamlit
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 # import streamlit as st
 
 # exit()
