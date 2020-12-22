@@ -63,7 +63,7 @@ data_load_state = st.text('Loading data...')
 data = load_data(5544)
 st.dataframe(data.head(500))
 
-if st.checkbox("Show dataset with selected columns"):
+if st.checkbox("Do you want to visualize only some columns? Select those you prefer"):
         # get the list of columns
         columns = data.columns.tolist()
         st.write("#### Which columns do you want to see?")
@@ -72,7 +72,7 @@ if st.checkbox("Show dataset with selected columns"):
         st.dataframe(selected_data)
         
 if st.checkbox("Show number of rows"):
-        st.write('5544')
+        st.write('5543')
 if st.checkbox("Show number of columns"):
         st.write('21')
 
