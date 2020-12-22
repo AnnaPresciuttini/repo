@@ -23,7 +23,7 @@ import numpy as np
 # data processing
 import pandas as pd 
 # data visualization
-import seaborn as sns
+# import seaborn as sns
 # %matplotlib inline
 # from matplotlib import pyplot as plt
 # from matplotlib import style
