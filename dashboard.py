@@ -78,11 +78,11 @@ if st.checkbox("Show number of columns"):
 if st.checkbox("Show description of dataset"):
         st.write(data.describe())
         
-if st.checkbox("Show correlations"):
+if st.checkbox("Show correlations among the initial features"):
             st.write("### Heatmap")
             st.write(ff.create_annotated_heatmap(z, x=x, y=y, annotation_text=z, colorscale='Viridis'))
 
-if st.checkbox("Show distribution of the features"):
+if st.checkbox("Show distribution of the initial features"):
             st.write("### Histograms")
             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
             plt.show()
