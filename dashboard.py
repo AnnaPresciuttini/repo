@@ -40,7 +40,6 @@ data = load_data(5594)
 
 
 st.dataframe(data.head(500))
-data.set_index('Date')
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
