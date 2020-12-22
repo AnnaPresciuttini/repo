@@ -186,8 +186,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
 
 
     if select_2 == 'High':
-         df = px.data.tips()
-         fig = px.box(df, y="high")
+         fig = px.box(data, y="high")
          fig.show()
 
     
