@@ -30,8 +30,8 @@ import pandas as pd
 
 st.title('Predicting weekly returns of the FTSE MIB Index')
 
-# st.sidebar.title("Exploratory data analysis:")
-# select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns',], key='1')
+st.sidebar.title("Exploratory data analysis:")
+select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns',], key='1')
 
 
 @st.cache
@@ -49,19 +49,11 @@ data = load_data(5994)
 
 
 
-st.dataframe(data.head(500))
-cols = ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns']
-st_ms = st.multiselect("Columns", data[[adjclose, open, high, volume, weekly_returns]].tolist())
+
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        data_ = data.loc[data['Date'] >= '1999-1-01']
-        data_.plot(x='Date', y= 'adjclose')
-#         pyplot.xlabel("Date")
-#         pyplot.ylabel( 'Adjusted Closing prices')
-#         pyplot.title( 'Italian adjusted closing prices history')
-#         pyplot.legend().set_visible(False)
-        
+        st.line_chart(data.adjclose)
         
 
  
