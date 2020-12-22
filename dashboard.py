@@ -83,14 +83,14 @@ if st.checkbox("Show number of columns"):
         st.write('8')
 
 # Show dataset description
-if st.checkbox("Show description of dataset"):
+if st.checkbox("Show summary statistics"):
         st.write(data.describe())
         
-if st.checkbox("Show correlations among the initial features and weekly returns"):
+if st.checkbox("Show correlations heatmap"):
             st.write("### Heatmap")
             st.write(ff.create_annotated_heatmap(z, x=x, y=y, annotation_text=z, colorscale='Viridis'))
 
-if st.checkbox("Show distribution of the initial features and weekly returns"):
+if st.checkbox("Show distribution of the features"):
             st.write("### Histograms")
             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
             plt.show()
@@ -107,6 +107,7 @@ if st.checkbox("Are weekly returns normally distributed?"):
             data['weekly_returns'].plot(kind="kde", color='steelblue', ax=ax1, legend=False )
             plt.show()
             st.pyplot()
+            st.write("### ... they are not normally distributed")
             
 if st.checkbox("Do you want to overlay a normal distribution on the histogram?"):
             data['weekly_returns'].hist(bins=280, color='cadetblue', density=True)
