@@ -18,6 +18,7 @@ import streamlit as st
 
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np 
+import matplotlib.pyplot as plt
 # data processing
 import pandas as pd 
 # data visualization
@@ -43,9 +44,13 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        data= data.loc[data['Date'] >= '1999-1-01']
-        data.plot(x='Date', y= 'adjclose')
-
+        df = df.loc[df['Date'] >= '1999-1-01']
+        df.plot(x='Date', y= 'adjclose')
+        plt.xlabel("Date")
+        plt.ylabel( 'Adjusted Closing prices')
+        plt.title( 'Italian adjusted closing prices history')
+        plt.legend().set_visible(False)
+        
 
  
         
