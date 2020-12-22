@@ -238,7 +238,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         st.plotly_chart(f_4)
         
     if select_3 == 'Weekly returns':
-        values_5 = st.sidebar.slider("Weekly returns range", data.weekly_returns.min(), 0.4, (0, 0.1))
+        values_5 = st.sidebar.slider("Weekly returns range", float(data.weekly_returns.min()), 0.4., (0., 0.1.))
         f_5 = px.histogram(data.query(f"weekly_returns.between{values_5}"), x="close", nbins=18, title="Weekly returns distribution")
         f_5.update_xaxes(title="Weekly returns")
         f_5.update_yaxes(title="Values")
