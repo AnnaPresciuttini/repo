@@ -104,7 +104,7 @@ if st.checkbox("Are weekly returns normally distributed?"):
             
 
 
-data_ = data.rename(columns={'Date':'index'}).set_index('index')
+# data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 # x = st.slider('Select the year range',1999, 2020, (1999, 2020))
 # st.line_chart(data_.adjclose)
