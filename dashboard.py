@@ -30,7 +30,9 @@ import pandas as pd
 
 st.title('Predicting weekly returns of the FTSE MIB Index')
 
-st.sidebar.title("Exploratory data analysis:")
+st.sidebar.title("Select one of the feature to see the time series:")
+select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='1')
+st.sidebar.title("Select one of the feature to see the boxplot:")
 select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='1')
 
 
