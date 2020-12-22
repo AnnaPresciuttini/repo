@@ -210,7 +210,12 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     
     
     if select_3 == 'High':
-         st.date_input("date range without default", [datetime.date(1999, 7, 6), datetime.date(2019, 7, 8)])
+        values = st.sidebar.slider(“High price range”, float(df.high.min()), 50000., (1200., 3000.))
+        f = px.histogram(df.query(f”high.between{values}”), x=”price”, nbins=18, title=”High distribution”)
+        f.update_xaxes(title=”High”)
+        f.update_yaxes(title=”Values”)
+        st.plotly_chart(f)
+        
     if select_3 == 'Volume':
          st.write( px.box(data, y="volume"))
     if select_3 == 'Close':
