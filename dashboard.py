@@ -65,9 +65,7 @@ if st.checkbox("Show description of dataset"):
         
 if st.checkbox("Show correlations"):
             st.write("### Heatmap")
-            fig, ax = plt.subplots(figsize=(10,10))
-            st.write(sns.heatmap(data[['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns']].corr(2), annot=True,linewidths=0.5))
-            st.pyplot()
+            st.write(seaborn.heatmap(data[['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns']].corr(2), annot=True,linewidths=0.5))
 
 
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
