@@ -16,6 +16,7 @@ Original file is located at
 
 import streamlit as st
 import plotly.express as px 
+import seaborn as sns
 
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np 
@@ -65,7 +66,7 @@ if st.checkbox("Show description of dataset"):
         
 if st.checkbox("Show correlations"):
             st.write("### Heatmap")
-            st.write(seaborn.heatmap(data[['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns']].corr(2), annot=True,linewidths=0.5))
+            st.write(sns.heatmap(data[['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns']].corr(2), annot=True,linewidths=0.5))
 
 
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
