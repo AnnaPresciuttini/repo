@@ -22,6 +22,7 @@ import numpy as np
 
 # data processing
 import pandas as pd 
+import seaborn as sns 
 # data visualization
 # import seaborn as sns
 # %matplotlib inline
@@ -91,17 +92,17 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
 
 if not st.sidebar.checkbox("Hide", True, key='2'):
     if select_2 == 'Open':
-         st.write(seaborn.boxplot(data.open)
-    if select_2 == 'High':
-         st.write(seaborn.boxplot(data.high)
-    if select_2 == 'Low':
-         st.write(seaborn.boxplot(data.low)
-    if select_2 == 'Close':
-         st.write(seaborn.boxplot(data.close)
-    if select_2 == 'Volume':
-         st.write(seaborn.boxplot(data.volume)
-    if select_2 == 'Weekly returns':
-         st.write(seaborn.boxplot(data.weekly_returns)
+         st.write(sns.boxplot(data.open)
+#     if select_2 == 'High':
+#          st.write(seaborn.boxplot(data.high)
+#     if select_2 == 'Low':
+#          st.write(seaborn.boxplot(data.low)
+#     if select_2 == 'Close':
+#          st.write(seaborn.boxplot(data.close)
+#     if select_2 == 'Volume':
+#          st.write(seaborn.boxplot(data.volume)
+#     if select_2 == 'Weekly returns':
+#          st.write(seaborn.boxplot(data.weekly_returns)
     
     
     
