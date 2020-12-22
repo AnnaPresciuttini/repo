@@ -81,7 +81,7 @@ if st.checkbox("Show number of rows"):
         st.write('5593')
 if st.checkbox("Show number of columns"):
         st.write('8')
-#
+
 # Show dataset description
 if st.checkbox("Show description of dataset"):
         st.write(data.describe())
