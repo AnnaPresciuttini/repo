@@ -40,7 +40,7 @@ def load_data(nrows):
 
 data_load_state = st.text('Loading data...')
 data = load_data(5594)
-data_ = data.rename(columns={'Date':'index'}).set_index('index')
+# data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 
 
@@ -48,7 +48,7 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        fig = px.line(df.adjclose, x="Date", y="adjclose", title='Life expectancy in Canada')
+        fig = px.line(data.adjclose, x="Date", y="adjclose", title='Life expectancy in Canada')
         fig.show()
         
 
