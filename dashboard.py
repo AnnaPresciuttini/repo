@@ -115,7 +115,15 @@ data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        st.line_chart(data_.adjclose)
+        data= data.loc[df['Date'] >= '1999-1-01']
+        data.plot(x='Date', y= 'adjclose')
+        plt.xlabel("Date")
+        plt.ylabel( 'Adjusted Closing prices')
+        plt.title( 'Italian adjusted closing prices history')
+        plt.legend().set_visible(False)
+        plt.show()
+        st.pyplot()
+        
     if select == 'Open':
         st.line_chart(data_.open)
     if select == 'High':
