@@ -22,7 +22,6 @@ import numpy as np
 
 # data processing
 import pandas as pd 
-import seaborn as sns 
 # data visualization
 # import seaborn as sns
 # %matplotlib inline
