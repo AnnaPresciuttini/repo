@@ -51,6 +51,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         plt.ylabel( 'Adjusted Closing prices')
         plt.title( 'Italian adjusted closing prices history')
         plt.legend().set_visible(False)
+        st.pyplot()
         
 
  
