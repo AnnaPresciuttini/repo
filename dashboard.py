@@ -23,7 +23,7 @@ import numpy as np
 # data processing
 import pandas as pd 
 # data visualization
-# import seaborn as sns
+import seaborn as sns
 # %matplotlib inline
 # from matplotlib import pyplot as plt
 # from matplotlib import style
@@ -90,7 +90,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         st.line_chart(data_.weekly_returns)
         
     if select_2 == 'Adjusted Closing Prices':
-        st.write(seaborn.boxplot(data.adjclose)
+        st.write(sns.boxplot(data.adjclose)
 #     if select_2 == 'Open':
 #          st.write(seaborn.boxplot(data.open)
 #     if select_2 == 'High':
@@ -111,7 +111,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
  
         
 
-# df=pd.read_csv("dataset_streamlit.csv")
 
 
 
