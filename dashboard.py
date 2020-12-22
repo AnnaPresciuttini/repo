@@ -19,8 +19,7 @@ import plotly.express as px
 
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np 
-with st.echo(code_location='below'):
-    import matplotlib.pyplot as plt
+
 # data processing
 import pandas as pd 
 # data visualization
@@ -42,14 +41,21 @@ data_load_state = st.text('Loading data...')
 data = load_data(5994)
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
+# x = st.slider('Select the year range',1999, 2020, (1999, 2020))
+# st.line_chart(data_.adjclose)
 
 
 st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        x = st.slider('Select the year range',1999, 2020, (1999, 2020))
-        st.line_chart(data_.adjclose)
+        data_ = data.loc[df['Date'] >= '1999-1-01']
+        data_.plot(x='Date', y= 'adjclose')
+        plt.xlabel("Date")
+        plt.ylabel( 'Adjusted Closing prices')
+        plt.title( 'Italian adjusted closing prices history')
+        plt.legend().set_visible(False)
+        
         
 
  
