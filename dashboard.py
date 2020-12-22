@@ -46,6 +46,12 @@ data_load_state = st.text('Loading data...')
 data = load_data(5994)
 st.dataframe(data.head(500))
 
+if st.checkbox("Show dataset with selected columns"):
+        # get the list of columns
+        columns = data.columns.tolist()
+        st.write("#### Select the columns to display:")
+        selected_cols = st.multiselect("", columns)
+
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 # x = st.slider('Select the year range',1999, 2020, (1999, 2020))
