@@ -30,6 +30,10 @@ st.title('Predicting weekly returns of the FTSE MIB Index')
 
 st.sidebar.title("Exploratory data analysis:")
 select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Weekly returns',], key='1')
+@st.cache
+def load_data(nrows):
+    data = pd.read_csv('dataset_streamlit.csv', nrows=nrows)
+    return data
 # df=pd.read_csv("dataset_streamlit.csv")
 # st.dataframe(df.head())
 
