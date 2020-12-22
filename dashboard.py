@@ -17,6 +17,18 @@ Original file is located at
 import streamlit as st
 import plotly.express as px 
 import plotly.figure_factory as ff
+z = [[1, 1, 1, 1, -0.35,1, 0.02],
+     [1, 1, 1, 1, -0.36,1, 0.03],
+     [1, 1, 1, 1, -0.35,1, 0.02],
+     [1, 1, 1, 1, -0.35,1, 0.03],
+     [-0.35, -0.36, -0.35, -0.35, 1,-0.35, -0.1],
+     [1, 1, 1, 1, -0.35,1, 0.03],
+     [0.02, 0.03, 0.02, 0.03, -0.1, 0.03,1]]
+
+x = ['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']
+y = ['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']
+# fig = ff.create_annotated_heatmap(z, x=x, y=y, annotation_text=z, colorscale='Viridis')
+# fig.show()
 
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np 
@@ -66,7 +78,7 @@ if st.checkbox("Show description of dataset"):
         
 if st.checkbox("Show correlations"):
             st.write("### Heatmap")
-#             st.write(sns.heatmap(data[['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns']].corr(2), annot=True,linewidths=0.5))
+            st.write(ff.create_annotated_heatmap(z, x=x, y=y, annotation_text=z, colorscale='Viridis'))
 
 
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
