@@ -115,7 +115,7 @@ if st.checkbox("Are weekly returns normally distributed?"):
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        data_= data_.loc[data['Date'] >= '1999-1-01']
+        data_= data.loc[data['Date'] >= '1999-1-01']
         data_.plot(x='Date', y= 'adjclose')
         plt.xlabel("Date")
         plt.ylabel( 'Adjusted Closing prices')
