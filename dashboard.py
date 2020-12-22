@@ -42,7 +42,7 @@ def load_data(nrows):
 
 data_load_state = st.text('Loading data...')
 data = load_data(5994)
-st.dataframe(df.head())
+st.dataframe(data.head(500))
 
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
