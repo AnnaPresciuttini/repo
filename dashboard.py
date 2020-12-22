@@ -15,6 +15,7 @@ Original file is located at
 # exit()
 
 import streamlit as st
+import plotly.express as px 
 
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np 
@@ -47,7 +48,8 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        st.line_chart(data_.adjclose)
+        fig = px.line(df.adjclose, x="Date", y="adjclose", title='Life expectancy in Canada')
+        fig.show()
         
 
  
