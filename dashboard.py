@@ -56,7 +56,7 @@ select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'Hi
 st.sidebar.title("Select one of the feature to see the boxplot:")
 select_2 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='2')
 st.sidebar.title("Select a feature to see an interactive histogram:")
-select_3 = st.sidebar.selectbox('Model', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns'], key='3')
+select_3 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns'], key='3')
 
 @st.cache
 def load_data(nrows):
@@ -85,11 +85,11 @@ if st.checkbox("Show number of columns"):
 if st.checkbox("Show description of dataset"):
         st.write(data.describe())
         
-if st.checkbox("Show correlations among the initial features"):
+if st.checkbox("Show correlations among the initial features and weekly returns"):
             st.write("### Heatmap")
             st.write(ff.create_annotated_heatmap(z, x=x, y=y, annotation_text=z, colorscale='Viridis'))
 
-if st.checkbox("Show distribution of the initial features"):
+if st.checkbox("Show distribution of the initial features and weekly returns"):
             st.write("### Histograms")
             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
             plt.show()
@@ -207,7 +207,23 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     if select_2 == 'Low':
          st.write( px.box(data, y="low"))
     
-        
+    
+    if select_3 == 'High':
+         values = st.sidebar.slider("Start date",0.0,1.0, value=0)
+         st.write( px.box(data, y="high"))
+    if select_3 == 'Volume':
+         st.write( px.box(data, y="volume"))
+    if select_3 == 'Close':
+         st.write( px.box(data, y="close"))
+    if select_3 == 'Open':
+         st.write( px.box(data, y="open"))
+    if select_3 == 'Weekly returns':
+         st.write( px.box(data, y="weekly_returns"))
+    if select_3 == 'Adjusted Closing Prices':
+         st.write( px.box(data, y="adjclose"))
+    if select_3 == 'Low':
+         st.write( px.box(data, y="low"))
+    
 
  
         
