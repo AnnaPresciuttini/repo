@@ -42,7 +42,7 @@ def load_data(nrows):
 
 data_load_state = st.text('Loading data...')
 data = load_data(5994)
-# data_ = data.rename(columns={'Date':'index'}).set_index('index')
+data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 # x = st.slider('Select the year range',1999, 2020, (1999, 2020))
 # st.line_chart(data_.adjclose)
@@ -53,7 +53,7 @@ data = load_data(5994)
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        st.line_chart(data.adjclose)
+        st.line_chart(data_.adjclose)
         
 
  
