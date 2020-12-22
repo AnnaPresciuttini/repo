@@ -16,7 +16,9 @@ Original file is located at
 import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-import plotly.express as px 
+import plotly.express as px
+from sklearn import linear_model
+
 # import pickle
 # pickle_in = open('classifier.pkl', 'rb') 
 # classifier = pickle.load(pickle_in)
