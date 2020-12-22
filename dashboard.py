@@ -78,9 +78,9 @@ if st.checkbox("Do you want to visualize only some columns?"):
         st.dataframe(selected_data)
         
 if st.checkbox("Show number of rows"):
-        st.write('5543')
+        st.write('5593')
 if st.checkbox("Show number of columns"):
-        st.write('21')
+        st.write('8')
 #
 # Show dataset description
 if st.checkbox("Show description of dataset"):
