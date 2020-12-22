@@ -96,6 +96,8 @@ if st.checkbox("Are weekly returns normally distributed?"):
             ax1 = ax.twinx()
 #             plt.title("Weekly returns distribution")
             data['weekly_returns'].plot(kind="kde", color='steelblue', ax=ax1, legend=False )
+            plt.show()
+            st.pyplot()
 #             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
 #             plt.show()
 #             st.pyplot()
