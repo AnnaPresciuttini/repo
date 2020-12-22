@@ -18,7 +18,8 @@ import streamlit as st
 
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np 
-import matplotlib.pyplot as plt
+with st.echo(code_location='below'):
+    import matplotlib.pyplot as plt
 # data processing
 import pandas as pd 
 # data visualization
