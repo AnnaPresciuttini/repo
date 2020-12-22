@@ -211,10 +211,10 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     
     if select_3 == 'High':
         values = st.sidebar.slider(“High price range”, float(data.high.min()), 50000., (1200., 3000.))
-        f = px.histogram(data.query(f”high.between{values}”), x=”price”, nbins=18, title=”High distribution”)
-        f.update_xaxes(title=”High”)
-        f.update_yaxes(title=”Values”)
-        st.plotly_chart(f)
+#         f = px.histogram(data.query(f”high.between{values}”), x=”price”, nbins=18, title=”High distribution”)
+#         f.update_xaxes(title=”High”)
+#         f.update_yaxes(title=”Values”)
+#         st.plotly_chart(f)
         
     if select_3 == 'Volume':
          st.write( px.box(data, y="volume"))
