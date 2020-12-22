@@ -59,9 +59,9 @@ if st.checkbox("Show number of rows"):
 if st.checkbox("Show number of columns"):
         st.write('{data.shape[1]}')
 
-    # Show dataset description
-    if st.checkbox("Show description of dataset"):
-        st.write(df.describe())
+#     # Show dataset description
+#     if st.checkbox("Show description of dataset"):
+#         st.write(df.describe())
 
 
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
