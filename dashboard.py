@@ -61,7 +61,7 @@ select_3 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', '
 
 @st.cache
 def load_data(nrows):
-    data = pd.read_csv('dataset_streamlit.csv', nrows=nrows)
+    data = pd.read_csv('dataset_streamlit_app.csv', nrows=nrows)
     return data
 
 
