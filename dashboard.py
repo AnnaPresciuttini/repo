@@ -14,6 +14,7 @@ Original file is located at
 # exit()
 
 import streamlit as st
+import sklearn
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 import plotly.express as px 
