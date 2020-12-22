@@ -42,6 +42,8 @@ def load_data(nrows):
 
 data_load_state = st.text('Loading data...')
 data = load_data(5994)
+st.dataframe(df.head())
+
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 # x = st.slider('Select the year range',1999, 2020, (1999, 2020))
@@ -60,7 +62,6 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         
 
 # df=pd.read_csv("dataset_streamlit.csv")
-# st.dataframe(df.head())
 
 
 
