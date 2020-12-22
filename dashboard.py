@@ -48,7 +48,7 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        fig = px.line(data.adjclose, x="Date", y="adjclose", title='Life expectancy in Canada')
+        fig = px.line(data, x=data.Date, y=data.adjclose, title='Life expectancy in Canada')
         fig.show()
         
 
