@@ -45,10 +45,10 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
         data = data.loc[data['Date'] >= '1999-1-01']
         data.plot(x='Date', y= 'adjclose')
-        pyplot.xlabel("Date")
-        pyplot.ylabel( 'Adjusted Closing prices')
-        pyplot.title( 'Italian adjusted closing prices history')
-        pyplot.legend().set_visible(False)
+        matplotlib.pyplot.xlabel("Date")
+        matplotlib.pyplot.ylabel( 'Adjusted Closing prices')
+        matplotlib.pyplot.title( 'Italian adjusted closing prices history')
+        matplotlib.pyplot.legend().set_visible(False)
 #         st.line_chart(data.adjclose)
  
         
