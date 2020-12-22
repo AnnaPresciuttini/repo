@@ -87,8 +87,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Volume':
         st.line_chart(data_.volume)
     if select == 'Weekly returns':
-        st.line_chart(data_.weekly_returns)
-        
+        st.line_chart(data_.weekly_returns)   
     if select_2 == 'Adjusted Closing Prices':
         st.write(sns.boxplot(data.adjclose)
 #     if select_2 == 'Open':
