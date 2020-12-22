@@ -58,7 +58,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         st.line_chart(data_.adjclose)
     if select == 'Open':
         st.line_chart(data_.open)
-     if select == 'High':
+    if select == 'High':
         st.line_chart(data_.high)
     if select == 'Low':
         st.line_chart(data_.low)
