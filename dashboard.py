@@ -58,7 +58,7 @@ def load_data(nrows):
 
 
 data_load_state = st.text('Loading data...')
-data = load_data(5994)
+data = load_data(5544)
 st.dataframe(data.head(500))
 
 if st.checkbox("Show dataset with selected columns"):
@@ -70,9 +70,9 @@ if st.checkbox("Show dataset with selected columns"):
         st.dataframe(selected_data)
         
 if st.checkbox("Show number of rows"):
-        st.write('5994')
+        st.write('5544')
 if st.checkbox("Show number of columns"):
-        st.write('9')
+        st.write('21')
 
 # Show dataset description
 if st.checkbox("Show description of dataset"):
