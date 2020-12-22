@@ -86,6 +86,19 @@ if st.checkbox("Show distribution of the features"):
             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
             plt.show()
             st.pyplot()
+ 
+if st.checkbox("Are weekly returns normally distributed?"):
+            st.write("### Let's see...")
+            fig = plt.figure()
+            ax = fig.add_subplot(111)
+            ax.set_xlim([-0.3, 0.2])
+            data['weekly_returns'].hist(ax= ax,bins=190, color='cadetblue')
+            ax1 = ax.twinx()
+#             plt.title("Weekly returns distribution")
+            data['weekly_returns'].plot(kind="kde", color='steelblue', ax=ax1, legend=False )
+#             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
+#             plt.show()
+#             st.pyplot()
             
 
 
