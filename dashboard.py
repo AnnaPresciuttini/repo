@@ -22,9 +22,9 @@ import numpy as np
 import pandas as pd 
 # data visualization
 # import seaborn as sns
-# %matplotlib inline
-# from matplotlib import pyplot as plt
-# from matplotlib import style
+%matplotlib inline
+from matplotlib import pyplot as plt
+from matplotlib import style
 
 st.title('Predicting weekly returns of the FTSE MIB Index')
 
