@@ -210,7 +210,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
     
     
     if select_3 == 'High':
-        values = st.sidebar.slider("High price range", float(data.high.min()), 50000., (1200., 3000.))
+        values = st.sidebar.slider("High price range", float(data.high.min()), 50000., (0., 3000.))
         f = px.histogram(data.query(f"high.between{values}"), x="high", nbins=18, title="High distribution")
         f.update_xaxes(title="High")
         f.update_yaxes(title="Values")
@@ -224,14 +224,14 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         st.plotly_chart(f_2)
         
     if select_3 == 'Close':
-        values_3 = st.sidebar.slider("Close range", float(data.close.min()), 50000., (1200., 3000.))
+        values_3 = st.sidebar.slider("Close range", float(data.close.min()), 50000., (0., 3000.))
         f_3 = px.histogram(data.query(f"close.between{values_3}"), x="close", nbins=18, title="Close distribution")
         f_3.update_xaxes(title="Close")
         f_3.update_yaxes(title="Values")
         st.plotly_chart(f_3)
         
     if select_3 == 'Open':
-        values_4 = st.sidebar.slider("Open range", float(data.open.min()), 50000., (1000., 3000.))
+        values_4 = st.sidebar.slider("Open range", float(data.open.min()), 50000., (0., 3000.))
         f_4 = px.histogram(data.query(f"open.between{values_4}"), x="open", nbins=18, title="Open distribution")
         f_4.update_xaxes(title="Open")
         f_4.update_yaxes(title="Values")
@@ -245,14 +245,14 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         st.plotly_chart(f_5)
         
     if select_3 == 'Adjusted Closing Prices':
-        values_6 = st.sidebar.slider("Adj close range", float(data.adjclose.min()), 50000., (1200., 3000.))
+        values_6 = st.sidebar.slider("Adj close range", float(data.adjclose.min()), 50000., (0., 3000.))
         f_6 = px.histogram(data.query(f"adjclose.between{values_6}"), x="adjclose", nbins=18, title="Adjclose distribution")
         f_6.update_xaxes(title="Adj Close")
         f_6.update_yaxes(title="Values")
         st.plotly_chart(f_6)
         
     if select_3 == 'Low':
-        values_7 = st.sidebar.slider("Low range", float(data.low.min()), 50000., (1200., 3000.))
+        values_7 = st.sidebar.slider("Low range", float(data.low.min()), 50000., (0., 3000.))
         f_7 = px.histogram(data.query(f"low.between{values_7}"), x="low", nbins=18, title="Low distribution")
         f_7.update_xaxes(title="Low")
         f_7.update_yaxes(title="Values")
