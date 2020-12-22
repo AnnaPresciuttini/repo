@@ -17,6 +17,7 @@ import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 import plotly.express as px 
+from scipy.stats import norm  
 import plotly.figure_factory as ff
 z = [[1, 1, 1, 1, -0.35,1, 0.02],
      [1, 1, 1, 1, -0.36,1, 0.03],
@@ -98,6 +99,9 @@ if st.checkbox("Are weekly returns normally distributed?"):
             data['weekly_returns'].plot(kind="kde", color='steelblue', ax=ax1, legend=False )
             plt.show()
             st.pyplot()
+            
+if st.checkbox("Do you want to overlay a normal distribution on the histogram?"):
+            
 #             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
 #             plt.show()
 #             st.pyplot()
