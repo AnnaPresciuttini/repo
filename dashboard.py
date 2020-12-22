@@ -55,9 +55,9 @@ if st.checkbox("Show dataset with selected columns"):
         st.dataframe(selected_data)
         
 if st.checkbox("Show number of rows"):
-        st.write({data.shape[0]}')
+        st.write('{data.shape[0]}')
 if st.checkbox("Show number of columns"):
-        st.write({data.shape[1]}')
+        st.write('{data.shape[1]}')
 
     # Show dataset description
     if st.checkbox("Show description of dataset"):
