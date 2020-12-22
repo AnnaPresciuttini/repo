@@ -51,6 +51,8 @@ if st.checkbox("Show dataset with selected columns"):
         columns = data.columns.tolist()
         st.write("#### Select the columns to display:")
         selected_cols = st.multiselect("", columns)
+        selected_data = data[selected_cols]
+        st.dataframe(selected_data)
 
 data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
