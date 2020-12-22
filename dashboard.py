@@ -14,14 +14,13 @@ Original file is located at
 # exit()
 
 import streamlit as st
-import sklearn
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 import plotly.express as px
 
-import pickle
-pickle_in = open('classifier.pkl', 'rb') 
-classifier = pickle.load(pickle_in) 
+# import pickle
+# pickle_in = open('classifier.pkl', 'rb') 
+# classifier = pickle.load(pickle_in) 
 
 from scipy.stats import norm  
 import plotly.figure_factory as ff
