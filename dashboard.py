@@ -9,12 +9,13 @@ Original file is located at
 
 # !pip install ipykernel
 # !pip install -q streamlit
-st.set_option('deprecation.showPyplotGlobalUse', False)
 # import streamlit as st
 
 # exit()
 
 import streamlit as st
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 import plotly.express as px 
 import plotly.figure_factory as ff
 z = [[1, 1, 1, 1, -0.35,1, 0.02],
