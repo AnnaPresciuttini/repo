@@ -39,8 +39,8 @@ def load_data(nrows):
     return data
 
 data_load_state = st.text('Loading data...')
-data = load_data(5594)
-# data_ = data.rename(columns={'Date':'index'}).set_index('index')
+data = load_data(2000)
+data_ = data.rename(columns={'Date':'index'}).set_index('index')
 
 
 
@@ -48,7 +48,7 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
-        st.line_chart(data.adjclose)
+        st.line_chart(data_.adjclose)
         
 
  
