@@ -8,9 +8,9 @@ Original file is located at
 """
 
 # !pip install ipykernel
-!pip install -q streamlit
+# !pip install -q streamlit
 
-import streamlit as st
+# import streamlit as st
 
 exit()
 
