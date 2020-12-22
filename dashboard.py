@@ -125,17 +125,68 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         st.pyplot()
         
     if select == 'Open':
-        st.line_chart(data_.open)
+        data_= data.loc[data['Date'] >= '1999-1-01']
+        data_.plot(x='Date', y= 'open')
+        plt.xlabel("Date")
+        plt.ylabel( 'Opening prices')
+        plt.title( 'Italian opening prices history')
+        plt.legend().set_visible(False)
+        plt.show()
+        st.pyplot()
+        
     if select == 'High':
-        st.line_chart(data_.high)
+        data_= data.loc[data['Date'] >= '1999-1-01']
+        data_.plot(x='Date', y= 'high')
+        plt.xlabel("Date")
+        plt.ylabel( 'Highest prices')
+        plt.title( 'Italian highest prices history')
+        plt.legend().set_visible(False)
+        plt.show()
+        st.pyplot()
+        
     if select == 'Low':
-        st.line_chart(data_.low)
+       if select == 'High':
+        data_= data.loc[data['Date'] >= '1999-1-01']
+        data_.plot(x='Date', y= 'low')
+        plt.xlabel("Date")
+        plt.ylabel( 'Lowest prices')
+        plt.title( 'Italian lowest prices history')
+        plt.legend().set_visible(False)
+        plt.show()
+        st.pyplot()
+        
     if select == 'Close':
-        st.line_chart(data_.close)
+        if select == 'High':
+        data_= data.loc[data['Date'] >= '1999-1-01']
+        data_.plot(x='Date', y= 'close')
+        plt.xlabel("Date")
+        plt.ylabel( 'Closing prices')
+        plt.title( 'Italian closing prices history')
+        plt.legend().set_visible(False)
+        plt.show()
+        st.pyplot()
+        
     if select == 'Volume':
-        st.line_chart(data_.volume)
+        if select == 'High':
+        data_= data.loc[data['Date'] >= '1999-1-01']
+        data_.plot(x='Date', y= 'volume')
+        plt.xlabel("Date")
+        plt.ylabel( 'Volumes')
+        plt.title( 'Italian volumes history')
+        plt.legend().set_visible(False)
+        plt.show()
+        st.pyplot()
+        
     if select == 'Weekly returns':
-        st.line_chart(data_.weekly_returns)   
+        if select == 'High':
+        data_= data.loc[data['Date'] >= '1999-1-01']
+        data_.plot(x='Date', y= 'high')
+        plt.xlabel("Date")
+        plt.ylabel( 'Weekly returns')
+        plt.title( 'Weekly returns history')
+        plt.legend().set_visible(False)
+        plt.show()
+        st.pyplot()   
 
 
 #     if select_2 == 'High':
