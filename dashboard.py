@@ -105,13 +105,9 @@ if st.checkbox("Do you want to overlay a normal distribution on the histogram?")
             plt.xlim(-0.3, 0.2)
             plt.plot( np.arange(-0.2, 0.2, 0.001), norm.pdf( np.arange(-0.2, 0.2, 0.001), 0.00013255652939758521,0.033349675649634244), label = "Normal distribution")
             plt.title("Actual distribution of weekly stock returns vs normal distribution")
-            plt.legend() # using a named size
-
-            
-#             data[['high', 'low', 'open', 'close', 'volume', 'adjclose', 'weekly_returns']].hist(bins=15, figsize=(15, 6), layout=(2, 4), color='lightblue', grid=False)
-#             plt.show()
-#             st.pyplot()
-            
+            plt.legend() 
+            plt.show()
+            st.pyplot()
 
 
 # data_ = data.rename(columns={'Date':'index'}).set_index('index')
