@@ -4,3 +4,4 @@ plotly.express
 pyplot 
 seaborn==0.11.1
 scikit-learn
+sklearn
