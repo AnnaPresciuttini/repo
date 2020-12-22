@@ -231,7 +231,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         st.plotly_chart(f_3)
         
     if select_3 == 'Open':
-        values_4 = st.sidebar.slider("Open range", float(data.open.min()), 50000., (1200., 3000.))
+        values_4 = st.sidebar.slider("Open range", float(data.open.min()), 50000., (1000., 3000.))
         f_4 = px.histogram(data.query(f"open.between{values_4}"), x="open", nbins=18, title="Open distribution")
         f_4.update_xaxes(title="Open")
         f_4.update_yaxes(title="Values")
