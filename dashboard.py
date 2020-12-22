@@ -41,6 +41,11 @@ data = load_data(5594)
 
 st.dataframe(data.head(500))
 
+if not st.sidebar.checkbox("Hide", True, key='1'):
+    if select == 'Adjusted Closing Prices':
+        st.line_chart(df.adjclose)
+        
+
 # df=pd.read_csv("dataset_streamlit.csv")
 # st.dataframe(df.head())
 
