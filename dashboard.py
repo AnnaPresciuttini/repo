@@ -232,28 +232,28 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         
     if select_3 == 'Open':
         values_4 = st.sidebar.slider("Open range", float(data.open.min()), 50000., (1200., 3000.))
-        f_4 = px.histogram(data.query(f"close.between{values_4}"), x="open", nbins=18, title="Open distribution")
+        f_4 = px.histogram(data.query(f"open.between{values_4}"), x="open", nbins=18, title="Open distribution")
         f_4.update_xaxes(title="Open")
         f_4.update_yaxes(title="Values")
         st.plotly_chart(f_4)
         
     if select_3 == 'Weekly returns':
-        values_5 = st.sidebar.slider("Weekly returns range", float(data.close.min()), 0.4, (-0.1, -0.15))
-        f_5 = px.histogram(data.query(f"close.between{values_5}"), x="close", nbins=18, title="Weekly returns distribution")
+        values_5 = st.sidebar.slider("Weekly returns range", float(data.weekly_returns.min()), 0.4, (0, 0.1))
+        f_5 = px.histogram(data.query(f"weekly_returns.between{values_5}"), x="close", nbins=18, title="Weekly returns distribution")
         f_5.update_xaxes(title="Weekly returns")
         f_5.update_yaxes(title="Values")
         st.plotly_chart(f_5)
         
     if select_3 == 'Adjusted Closing Prices':
         values_6 = st.sidebar.slider("Adj close range", float(data.adjclose.min()), 50000., (1200., 3000.))
-        f_6 = px.histogram(data.query(f"close.between{values_6}"), x="adjclose", nbins=18, title="Adjclose distribution")
+        f_6 = px.histogram(data.query(f"adjclose.between{values_6}"), x="adjclose", nbins=18, title="Adjclose distribution")
         f_6.update_xaxes(title="Adj Close")
         f_6.update_yaxes(title="Values")
         st.plotly_chart(f_6)
         
     if select_3 == 'Low':
         values_7 = st.sidebar.slider("Low range", float(data.low.min()), 50000., (1200., 3000.))
-        f_7 = px.histogram(data.query(f"close.between{values_7}"), x="low", nbins=18, title="Low distribution")
+        f_7 = px.histogram(data.query(f"low.between{values_7}"), x="low", nbins=18, title="Low distribution")
         f_7.update_xaxes(title="Low")
         f_7.update_yaxes(title="Values")
         st.plotly_chart(f_7)
