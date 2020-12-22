@@ -36,10 +36,10 @@ def load_data(nrows):
     return data
 
 data_load_state = st.text('Loading data...')
-data = load_data(1000)
+data = load_data(5594)
 
 
-st.dataframe(data.head())
+st.dataframe(data.head(500))
 
 # df=pd.read_csv("dataset_streamlit.csv")
 # st.dataframe(df.head())
