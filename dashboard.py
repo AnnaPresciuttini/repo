@@ -48,6 +48,7 @@ st.dataframe(data.head(500))
 
 if not st.sidebar.checkbox("Hide", True, key='1'):
     if select == 'Adjusted Closing Prices':
+        x = st.slider('Select the year range',1999, 2020, (1999, 2020))
         st.line_chart(data_.adjclose)
         
 
