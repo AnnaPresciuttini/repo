@@ -63,7 +63,7 @@ data_load_state = st.text('Loading data...')
 data = load_data(5544)
 st.dataframe(data.head(500))
 
-if st.checkbox("Do you want to visualize only some columns? Select those you prefer"):
+if st.checkbox("Do you want to visualize only some columns?"):
         # get the list of columns
         columns = data.columns.tolist()
         st.write("#### Which columns do you want to see?")
