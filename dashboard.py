@@ -57,7 +57,7 @@ select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'Hi
 st.sidebar.title("Select one of the feature to see the boxplot:")
 select_2 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='2')
 st.sidebar.title("Select a feature to see an interactive histogram:")
-select_3 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High', 'Low', 'Close', 'Weekly returns'], key='3')
+select_3 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High', 'Low', 'Close'], key='3')
 
 @st.cache
 def load_data(nrows):
