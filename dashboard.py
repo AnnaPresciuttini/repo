@@ -67,7 +67,7 @@ def load_data(nrows):
 from PIL import Image
 image = Image.open('ftsemib.jpg')
 
-st.image(image, caption='Sunrise by the mountains',
+st.image(image, 
          use_column_width=True)
 
 data = load_data(5544)
