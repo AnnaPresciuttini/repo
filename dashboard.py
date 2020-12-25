@@ -65,7 +65,6 @@ def load_data(nrows):
     return data
 
 
-data_load_state = st.text('Loading data...')
 data = load_data(5544)
 st.dataframe(data.head(500))
 
