@@ -50,7 +50,6 @@ from matplotlib import pyplot as plt
 # from matplotlib import style
 
 st.title('Predicting weekly returns of the FTSE MIB Index')
-st.markdown("Welcome!")
 
 st.sidebar.title("Select one of the feature to see the time series:")
 select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='1')
