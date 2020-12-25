@@ -57,7 +57,7 @@ select = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'Hi
 st.sidebar.title("Select one of the feature to see the boxplot:")
 select_2 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns',], key='2')
 st.sidebar.title("Select a feature to see an interactive histogram:")
-select_3 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High','Volume', 'Low', 'Close', 'Weekly returns'], key='3')
+select_3 = st.sidebar.selectbox('Feature', ['Adjusted Closing Prices', 'Open', 'High', 'Low', 'Close', 'Weekly returns'], key='3')
 
 @st.cache
 def load_data(nrows):
@@ -216,13 +216,7 @@ if not st.sidebar.checkbox("Hide", True, key='1'):
         f.update_xaxes(title="High")
         f.update_yaxes(title="Values")
         st.plotly_chart(f)
-        
-    if select_3 == 'Volume':
-        values_2 = st.sidebar.slider("Volume range", float(data.volume.min()), 3., (1., 2.))
-        f_2 = px.histogram(data.query(f"volume.between{values_2}"), x="volume", nbins=18, title="Volume distribution")
-        f_2.update_xaxes(title="Volume")
-        f_2.update_yaxes(title="Values")
-        st.plotly_chart(f_2)
+    
         
     if select_3 == 'Close':
         values_3 = st.sidebar.slider("Close range", float(data.close.min()), 50000., (0., 3000.))
