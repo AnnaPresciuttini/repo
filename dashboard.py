@@ -64,6 +64,11 @@ def load_data(nrows):
     data = pd.read_csv('dataset_streamlit_app.csv', nrows=nrows)
     return data
 
+from PIL import Image
+image = Image.open('ftsemib.jpg')
+
+st.image(image, caption='Sunrise by the mountains',
+         use_column_width=True)
 
 data = load_data(5544)
 st.dataframe(data.head(500))
